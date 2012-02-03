@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  username: MyString
+  realname: MyString
+  email: MyString
+  emergency_info: MyText
+  price: 9.99
+  amount: 9.99
+  fee: 9.99
+  paid: false
+  txn: MyString
+  event: 
+
+two:
+  username: MyString
+  realname: MyString
+  email: MyString
+  emergency_info: MyText
+  price: 9.99
+  amount: 9.99
+  fee: 9.99
+  paid: false
+  txn: MyString
+  event: 
