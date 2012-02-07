@@ -1,7 +1,6 @@
 class Attendee < ActiveRecord::Base
   belongs_to :event
 
-
   validates :agewaiver, :acceptance => true
 
   validates :username,

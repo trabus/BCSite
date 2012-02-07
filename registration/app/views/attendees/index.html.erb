@@ -1,18 +1,10 @@
 <h1><%= @current_event.name %> attendees</h1>
 
-<ul>
-
-<% @attendees.each do |attendee| %>
-  <li>
-    <p><%= attendee.username %>
-      <%= link_to 'Show', attendee %> 
-      <%= link_to 'Edit', edit_attendee_path(attendee) %> 
-      <%= link_to 'Destroy', attendee, :confirm => 'Are you sure?', :method => :delete %>
-    <p>
-  </li>
+<% unless admin? %>
+  <%= render 'list' %>
+<% else %>
+  <%= render 'admin_list' %>
 <% end %>
-</ul>
-
 <br />
 
 <%= link_to 'New Attendee', new_attendee_path %>
