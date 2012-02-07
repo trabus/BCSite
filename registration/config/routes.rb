@@ -1,16 +1,21 @@
 Registration::Application.routes.draw do
-  resources :attendees, :events
+  resources :attendees, :events, :register
 
   match 'home/:id', :to => 'home#index', :as => :home
 
   match 'home/' => 'home#index'
+  match 'about/' => 'home#about'
+  match 'activities/' => 'home#activities'
 
   get 'login/', :to => 'sessions#new', :as => :login
   post 'login/', :to => 'sessions#create', :as => :sessions
   get 'logout/', :to => 'sessions#destroy'
 
-  get 'register/', :to => 'attendees#new', :as => :register
-  post 'register/', :to => 'attendees#create'
+  #get 'register/', :to => 'reg#new', :as => :register
+  #post 'register/', :to => 'attendees#create'
+  #get 'register/:id/edit', :to => 'attendees#edit', :as => :edit_register
+  #puts 'register/:id', :to => 'attendees#update', :as => :register
+  #get 'register/:id', :to => 'attendees#show', :as => :register
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
