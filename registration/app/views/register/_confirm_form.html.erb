@@ -1,0 +1,22 @@
+<%= form_for @attendee, :url => '/home' do |f| %>
+  <% if @attendee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attendee.errors.count, "error") %> prohibited this attendee from being saved:</h2>
+
+      <ul>
+      <% @attendee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= f.hidden_field :username, :value => :username %>
+    <%= f.hidden_field :realname, :value => :realname %>
+    <%= f.hidden_field :email, :value => :email %>
+    <%= f.hidden_field :price, :value => 10 %>
+    <%= f.hidden_field :fee, :value => 0 %>
+    <%= f.hidden_field :amount, :value => 0 %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
