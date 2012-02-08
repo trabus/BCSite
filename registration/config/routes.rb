@@ -11,6 +11,8 @@ Registration::Application.routes.draw do
   post 'login/', :to => 'sessions#create', :as => :sessions
   get 'logout/', :to => 'sessions#destroy'
 
+  get 'register/:id/confirm', :to => 'register#confirm', :as => :register
+
   #get 'register/', :to => 'reg#new', :as => :register
   #post 'register/', :to => 'attendees#create'
   #get 'register/:id/edit', :to => 'attendees#edit', :as => :edit_register

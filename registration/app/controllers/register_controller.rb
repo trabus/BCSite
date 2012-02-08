@@ -10,6 +10,12 @@ class RegisterController < ApplicationController
     respond_with(@attendees)
   end
 
+  # GET /register/1/confirm
+  # GET /register/1/confrim.json
+  def confirm
+    @attendee = Attendee.find(params[:id])
+    respond_with(@attendee)
+  end
   # GET /register/1
   # GET /register/1.json
   def show
