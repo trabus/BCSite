@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Username:</b>
+  <%= @attendee.username %>
+</p>
+
+<p>
+  <b>Realname:</b>
+  <%= @attendee.realname %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @attendee.email %>
+</p>
+
+<p>
+  <b>Emergency info:</b>
+  <%= @attendee.emergency_info %>
+</p>
+<p>
+  <b>Datenight</b>
+  <%= @attendee.datenight %>
+</p>
+<p>
+  <b>Price:</b>
+  <%= @attendee.price %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @attendee.amount %>
+</p>
+
+<p>
+  <b>Fee:</b>
+  <%= @attendee.fee %>
+</p>
+
+<p>
+  <b>Paid:</b>
+  <%= @attendee.paid %>
+</p>
+
+<p>
+  <b>Txn:</b>
+  <%= @attendee.txn %>
+</p>
+
+<p>
+  <b>Event:</b>
+  <%= @attendee.event.id %>
+</p>
+
+
+<%= link_to 'Edit', edit_register_path(@attendee) %> |
+<%= link_to 'Back', register_index_path %>

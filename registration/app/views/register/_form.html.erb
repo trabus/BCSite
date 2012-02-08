@@ -1,0 +1,55 @@
+<%= form_for @attendee, :url => register_path(@attendee) do |f| %>
+  <% if @attendee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attendee.errors.count, "error") %> prohibited this attendee from being saved:</h2>
+
+      <ul>
+      <% @attendee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :realname %><br />
+    <%= f.text_field :realname %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :email_confirmation %><br />
+    <%= f.text_field :email_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :emergency_info %><br />
+    <%= f.text_area :emergency_info %>
+  </div>
+  <div class="field">
+    <%= f.radio_button :datenight, 'mandate' %>
+    <%= f.label :datenight_mandate, 'Mandate' %>
+    <%= f.radio_button :datenight, 'damedate' %>
+    <%= f.label :datenight_damedate, 'Damedate' %>
+    <%= f.radio_button :datenight, 'none', {:checked => true} %>
+    <%= f.label :datenight_none, 'None' %>
+  </div>
+  <% if ["new","create"].include? params[:action] %>
+    <div class="field">
+      <%= f.label :agewaiver %><br />
+      <%= f.check_box :agewaiver %>
+    </div>
+    <%= f.hidden_field :price, :value => 10 %>
+    <%= f.hidden_field :fee, :value => 0 %>
+    <%= f.hidden_field :amount, :value => 0 %>
+    <%= f.hidden_field :paid, :value => false %>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

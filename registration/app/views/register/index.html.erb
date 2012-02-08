@@ -1,0 +1,11 @@
+<h1><%= @current_event.name %> registered attendees</h1>
+
+<% unless admin? %>
+  <%= render 'list' %>
+<% else %>
+  <h2>Welcome, admin</h2>
+  <%= render 'admin_list' %>
+<% end %>
+<br />
+
+<%= link_to 'New Attendee', new_register_path %>

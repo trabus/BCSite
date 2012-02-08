@@ -1,0 +1,1063 @@
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:cpo_save=&cpo
+set cpo&vim
+imap <M-D-Left> h
+imap <M-D-Right>  l
+imap <M-D-Down>  j
+imap <M-D-Up>  k
+imap <D-9> 9gt
+imap <D-8> 8gt
+imap <D-7> 7gt
+imap <D-6> 6gt
+imap <D-5> 5gt
+imap <D-4> 4gt
+imap <D-3> 3gt
+imap <D-2> 2gt
+imap <D-1> 1gt
+imap <D-0> 0gt
+imap <D-/> <Plug>NERDCommenterTogglei
+imap <D-t> :CommandT
+imap <D-BS> 
+imap <M-BS> 
+imap <M-Down> }
+inoremap <D-Down> <C-End>
+imap <M-Up> {
+inoremap <D-Up> <C-Home>
+noremap! <M-Right> <C-Right>
+noremap! <D-Right> <End>
+noremap! <M-Left> <C-Left>
+noremap! <D-Left> <Home>
+inoremap <silent> <S-Tab> =BackwardsSnippet()
+inoremap <C-Tab> 	
+inoremap <silent> <Plug>NERDCommenterInInsert  <BS>:call NERDComment(0, "insert")
+nmap  :NERDTreeToggle
+nmap  :TlistToggle
+nnoremap  :set hlsearch!
+snoremap <silent> 	 i<Right>=TriggerSnippet()
+nmap o <Plug>ZoomWin
+snoremap  b<BS>
+map  :tnext
+snoremap % b<BS>%
+snoremap ' b<BS>'
+inoremap ï o
+xmap S <Plug>VSurround
+snoremap U b<BS>U
+nmap [xx <Plug>unimpairedLineXmlEncode
+xmap [x <Plug>unimpairedXmlEncode
+nmap [x <Plug>unimpairedXmlEncode
+nmap [uu <Plug>unimpairedLineUrlEncode
+xmap [u <Plug>unimpairedUrlEncode
+nmap [u <Plug>unimpairedUrlEncode
+nmap [yy <Plug>unimpairedLineStringEncode
+xmap [y <Plug>unimpairedStringEncode
+nmap [y <Plug>unimpairedStringEncode
+xmap [e <Plug>unimpairedMoveUp
+nmap [e <Plug>unimpairedMoveUp
+nmap [  <Plug>unimpairedBlankUp
+nmap [o <Plug>unimpairedOPrevious
+nmap <silent> [T <Plug>unimpairedTFirst
+nmap <silent> [t <Plug>unimpairedTPrevious
+nmap <silent> [Q <Plug>unimpairedQFirst
+nmap <silent> [q <Plug>unimpairedQPrevious
+nmap <silent> [L <Plug>unimpairedLFirst
+nmap <silent> [l <Plug>unimpairedLPrevious
+nmap <silent> [B <Plug>unimpairedBFirst
+nmap <silent> [b <Plug>unimpairedBPrevious
+nmap <silent> [A <Plug>unimpairedAFirst
+nmap <silent> [a <Plug>unimpairedAPrevious
+vmap [% [%m'gv``
+map \= =
+snoremap \ b<BS>\
+nmap \Z <Plug>SearchFoldRestore
+nmap \iz <Plug>SearchFoldInverse
+nmap \z <Plug>SearchFoldNormal
+nmap <silent> \b :CommandTBuffer
+nmap <silent> \t :CommandT
+map \rwp <Plug>RestoreWinPosn
+map \swp <Plug>SaveWinPosn
+nmap \ca <Plug>NERDCommenterAltDelims
+vmap \cA <Plug>NERDCommenterAppend
+nmap \cA <Plug>NERDCommenterAppend
+vmap \c$ <Plug>NERDCommenterToEOL
+nmap \c$ <Plug>NERDCommenterToEOL
+vmap \cu <Plug>NERDCommenterUncomment
+nmap \cu <Plug>NERDCommenterUncomment
+vmap \cn <Plug>NERDCommenterNest
+nmap \cn <Plug>NERDCommenterNest
+vmap \cb <Plug>NERDCommenterAlignBoth
+nmap \cb <Plug>NERDCommenterAlignBoth
+vmap \cl <Plug>NERDCommenterAlignLeft
+nmap \cl <Plug>NERDCommenterAlignLeft
+vmap \cy <Plug>NERDCommenterYank
+nmap \cy <Plug>NERDCommenterYank
+vmap \ci <Plug>NERDCommenterInvert
+nmap \ci <Plug>NERDCommenterInvert
+vmap \cs <Plug>NERDCommenterSexy
+nmap \cs <Plug>NERDCommenterSexy
+vmap \cm <Plug>NERDCommenterMinimal
+nmap \cm <Plug>NERDCommenterMinimal
+vmap \c  <Plug>NERDCommenterToggle
+nmap \c  <Plug>NERDCommenterToggle
+vmap \cc <Plug>NERDCommenterComment
+nmap \cc <Plug>NERDCommenterComment
+map \tt <Plug>AM_tt
+map \tsq <Plug>AM_tsq
+map \tsp <Plug>AM_tsp
+map \tml <Plug>AM_tml
+map \tab <Plug>AM_tab
+map \m= <Plug>AM_m=
+map \t@ <Plug>AM_t@
+map \t~ <Plug>AM_t~
+map \t? <Plug>AM_t?
+map \w= <Plug>AM_w=
+map \ts= <Plug>AM_ts=
+map \ts< <Plug>AM_ts<
+map \ts; <Plug>AM_ts;
+map \ts: <Plug>AM_ts:
+map \ts, <Plug>AM_ts,
+map \t= <Plug>AM_t=
+map \t< <Plug>AM_t<
+map \t; <Plug>AM_t;
+map \t: <Plug>AM_t:
+map \t, <Plug>AM_t,
+map \t# <Plug>AM_t#
+map \t| <Plug>AM_t|
+map \T~ <Plug>AM_T~
+map \Tsp <Plug>AM_Tsp
+map \Tab <Plug>AM_Tab
+map \T@ <Plug>AM_T@
+map \T? <Plug>AM_T?
+map \T= <Plug>AM_T=
+map \T< <Plug>AM_T<
+map \T; <Plug>AM_T;
+map \T: <Plug>AM_T:
+map \Ts, <Plug>AM_Ts,
+map \T, <Plug>AM_T,o
+map \T# <Plug>AM_T#
+map \T| <Plug>AM_T|
+map \Htd <Plug>AM_Htd
+map \anum <Plug>AM_aunum
+map \aunum <Plug>AM_aenum
+map \afnc <Plug>AM_afnc
+map \adef <Plug>AM_adef
+map \adec <Plug>AM_adec
+map \ascom <Plug>AM_ascom
+map \aocom <Plug>AM_aocom
+map \adcom <Plug>AM_adcom
+map \acom <Plug>AM_acom
+map \abox <Plug>AM_abox
+map \a( <Plug>AM_a(
+map \a= <Plug>AM_a=
+map \a< <Plug>AM_a<
+map \a, <Plug>AM_a,
+map \a? <Plug>AM_a?
+map \s :mksession! session.vis
+map \te :tabe =expand("%:p:h") . "/" 
+map \e :e =expand("%:p:h") . "/" 
+map \rt :!ctags --extra=+f -R *
+map \\ :ZoomWin
+nmap ]xx <Plug>unimpairedLineXmlDecode
+xmap ]x <Plug>unimpairedXmlDecode
+nmap ]x <Plug>unimpairedXmlDecode
+nmap ]uu <Plug>unimpairedLineUrlDecode
+xmap ]u <Plug>unimpairedUrlDecode
+nmap ]u <Plug>unimpairedUrlDecode
+nmap ]yy <Plug>unimpairedLineStringDecode
+xmap ]y <Plug>unimpairedStringDecode
+nmap ]y <Plug>unimpairedStringDecode
+xmap ]e <Plug>unimpairedMoveDown
+nmap ]e <Plug>unimpairedMoveDown
+nmap ]  <Plug>unimpairedBlankDown
+nmap ]o <Plug>unimpairedONext
+nmap <silent> ]T <Plug>unimpairedTLast
+nmap <silent> ]t <Plug>unimpairedTNext
+nmap <silent> ]Q <Plug>unimpairedQLast
+nmap <silent> ]q <Plug>unimpairedQNext
+nmap <silent> ]L <Plug>unimpairedLLast
+nmap <silent> ]l <Plug>unimpairedLNext
+nmap <silent> ]B <Plug>unimpairedBLast
+nmap <silent> ]b <Plug>unimpairedBNext
+nmap <silent> ]A <Plug>unimpairedALast
+nmap <silent> ]a <Plug>unimpairedANext
+vmap ]% ]%m'gv``
+snoremap ^ b<BS>^
+snoremap ` b<BS>`
+vmap a% [%v]%
+nmap cs <Plug>Csurround
+nmap ds <Plug>Dsurround
+nmap gx <Plug>NetrwBrowseX
+xmap gS <Plug>VgSurround
+xnoremap <silent> s :echoerr 'surround.vim: Visual mode s has been removed in favor of S'
+nmap ySS <Plug>YSsurround
+nmap ySs <Plug>YSsurround
+nmap yss <Plug>Yssurround
+nmap yS <Plug>YSurround
+nmap ys <Plug>Ysurround
+map <M-D-Left> h
+map <M-D-Right> l
+map <M-D-Down> j
+map <M-D-Up> k
+map <D-9> 9gt
+map <D-8> 8gt
+map <D-7> 7gt
+map <D-6> 6gt
+map <D-5> 5gt
+map <D-4> 4gt
+map <D-3> 3gt
+map <D-2> 2gt
+map <D-1> 1gt
+map <D-0> 0gt
+vmap <D-[> <gv
+vmap <D-]> >gv
+map <D-/> <Plug>NERDCommenterToggle
+map <D-e> :call StartTerm()
+map <D-F> :Ack 
+map <D-t> :CommandT
+map <M-Down> }
+noremap <D-Down> <C-End>
+map <M-Up> {
+noremap <D-Up> <C-Home>
+noremap <M-Right> <C-Right>
+noremap <D-Right> <End>
+noremap <M-Left> <C-Left>
+noremap <D-Left> <Home>
+snoremap <Left> bi
+snoremap <Right> a
+snoremap <BS> b<BS>
+snoremap <silent> <S-Tab> i<Right>=BackwardsSnippet()
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+xnoremap <silent> <Plug>unimpairedMoveDown :exe 'normal! m`'|exe '''<,''>move''>+'.v:count1``
+xnoremap <silent> <Plug>unimpairedMoveUp :exe 'normal! m`'|exe '''<,''>move--'.v:count1``
+nmap <silent> <Plug>unimpairedTLast :exe "tlast ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedTFirst :exe "tfirst ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedTNext :exe "tnext ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedTPrevious :exe "tprevious ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedQLast :exe "clast ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedQFirst :exe "cfirst ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedQNext :exe "cnext ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedQPrevious :exe "cprevious ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedLLast :exe "llast ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedLFirst :exe "lfirst ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedLNext :exe "lnext ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedLPrevious :exe "lprevious ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedBLast :exe "blast ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedBFirst :exe "bfirst ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedBNext :exe "bnext ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedBPrevious :exe "bprevious ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedALast :exe "last ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedAFirst :exe "first ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedANext :exe "next ".(v:count ? v:count : "")
+nmap <silent> <Plug>unimpairedAPrevious :exe "previous ".(v:count ? v:count : "")
+nnoremap <silent> <Plug>SearchFoldRestore :call SearchFoldRestore()
+nnoremap <silent> <Plug>SearchFoldInverse :call SearchFold(1)
+nnoremap <silent> <Plug>SearchFoldNormal :call SearchFold(0)
+nmap <silent> <Plug>RestoreWinPosn :call RestoreWinPosn()
+nmap <silent> <Plug>SaveWinPosn :call SaveWinPosn()
+nmap <silent> <Plug>NERDCommenterAppend :call NERDComment(0, "append")
+nnoremap <silent> <Plug>NERDCommenterToEOL :call NERDComment(0, "toEOL")
+vnoremap <silent> <Plug>NERDCommenterUncomment :call NERDComment(1, "uncomment")
+nnoremap <silent> <Plug>NERDCommenterUncomment :call NERDComment(0, "uncomment")
+vnoremap <silent> <Plug>NERDCommenterNest :call NERDComment(1, "nested")
+nnoremap <silent> <Plug>NERDCommenterNest :call NERDComment(0, "nested")
+vnoremap <silent> <Plug>NERDCommenterAlignBoth :call NERDComment(1, "alignBoth")
+nnoremap <silent> <Plug>NERDCommenterAlignBoth :call NERDComment(0, "alignBoth")
+vnoremap <silent> <Plug>NERDCommenterAlignLeft :call NERDComment(1, "alignLeft")
+nnoremap <silent> <Plug>NERDCommenterAlignLeft :call NERDComment(0, "alignLeft")
+vmap <silent> <Plug>NERDCommenterYank :call NERDComment(1, "yank")
+nmap <silent> <Plug>NERDCommenterYank :call NERDComment(0, "yank")
+vnoremap <silent> <Plug>NERDCommenterInvert :call NERDComment(1, "invert")
+nnoremap <silent> <Plug>NERDCommenterInvert :call NERDComment(0, "invert")
+vnoremap <silent> <Plug>NERDCommenterSexy :call NERDComment(1, "sexy")
+nnoremap <silent> <Plug>NERDCommenterSexy :call NERDComment(0, "sexy")
+vnoremap <silent> <Plug>NERDCommenterMinimal :call NERDComment(1, "minimal")
+nnoremap <silent> <Plug>NERDCommenterMinimal :call NERDComment(0, "minimal")
+vnoremap <silent> <Plug>NERDCommenterToggle :call NERDComment(1, "toggle")
+nnoremap <silent> <Plug>NERDCommenterToggle :call NERDComment(0, "toggle")
+vnoremap <silent> <Plug>NERDCommenterComment :call NERDComment(1, "norm")
+nnoremap <silent> <Plug>NERDCommenterComment :call NERDComment(0, "norm")
+nmap <SNR>28_WE <Plug>AlignMapsWrapperEnd
+map <SNR>28_WS <Plug>AlignMapsWrapperStart
+vmap <C-Down> ]egv
+vmap <C-Up> [egv
+nmap <C-Down> ]e
+nmap <C-Up> [e
+xmap <BS> "-d
+imap S <Plug>ISurround
+imap s <Plug>Isurround
+inoremap <silent> 	 =TriggerSnippet()
+imap  <Plug>SuperTabForward
+imap  <Plug>SuperTabBackward
+cmap  =expand("%:p:h") . "/" 
+inoremap <silent> 	 =ShowAvailableSnips()
+imap  <Plug>Isurround
+imap  <Plug>AlwaysEnd
+imap \=  =
+cabbr mkdir =getcmdpos() == 1 && getcmdtype() == ":" ? "Mkdir" : "mkdir"
+cabbr e =getcmdpos() == 1 && getcmdtype() == ":" ? "Edit" : "e"
+cabbr rm =getcmdpos() == 1 && getcmdtype() == ":" ? "Remove" : "rm"
+cabbr touch =getcmdpos() == 1 && getcmdtype() == ":" ? "Touch" : "touch"
+cabbr cd =getcmdpos() == 1 && getcmdtype() == ":" ? "ChangeDirectory" : "cd"
+let &cpo=s:cpo_save
+unlet s:cpo_save
+set background=dark
+set backspace=indent,eol,start
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
+set noequalalways
+set expandtab
+set fileencodings=ucs-bom,utf-8,default,latin1
+set fuoptions=maxhorz,maxvert
+set guioptions=egmrLt
+set guitablabel=%M%t
+set helplang=en
+set hlsearch
+set ignorecase
+set incsearch
+set isident=@,48-57,_,192-255,$
+set iskeyword=@,48-57,_,192-255,$
+set langmenu=none
+set laststatus=2
+set listchars=tab:\ \ ,trail:·
+set modelines=10
+set mouse=a
+set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
+set ruler
+set shiftwidth=2
+set showcmd
+set smartcase
+set softtabstop=2
+set tabstop=2
+set termencoding=utf-8
+set visualbell
+set wildignore=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildmode=list:longest,list:full
+set window=74
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd ~/Sites/bootycon/registration
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +1 registration.vis
+badd +1 app/controllers/application_controller.rb
+badd +1 app/controllers/attendees_controller.rb
+badd +6 config/routes.rb
+badd +1 app/helpers/home_helper.rb
+badd +1 app/helpers/events_helper.rb
+badd +1 app/helpers/attendees_helper.rb
+badd +1 app/helpers/application_helper.rb
+badd +4 app/models/attendee.rb
+badd +3 app/models/event.rb
+badd +4 app/views/home/index.html.erb
+badd +58 app/views/attendees/show.html.erb
+badd +44 app/views/attendees/_form.html.erb
+badd +16 app/views/attendees/_pay_form.html.erb
+badd +7 app/views/attendees/edit.html.erb
+badd +7 app/views/attendees/index.html.erb
+badd +1 app/views/attendees/new.html.erb
+badd +1 app/controllers/home_controller.rb
+badd +5 app/controllers/sessions_controller.rb
+badd +4 /app/views/sessions/index.html.erb
+badd +1 apps/views/sessions/index.html.erb
+badd +7 app/views/sessions/index.html.erb
+badd +10 app/views/sessions/new.html.erb
+badd +5 app/views/attendees/_list.html.erb
+badd +0 app/views/attendees/_admin_list.html.erb
+badd +0 app/controllers/register_controller.rb
+badd +1 app/views/register/new.html.erb
+badd +58 app/views/register/show.html.erb
+badd +6 app/views/register/index.html.erb
+badd +1 app/views/register/edit.html.erb
+badd +1 app/views/register/_pay_form.html.erb
+badd +1 app/views/register/_list.html.erb
+badd +19 app/views/register/_form.html.erb
+args app/controllers/application_controller.rb
+edit app/controllers/application_controller.rb
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer> f <Plug>RailsSplitFind
+nmap <buffer> gf <Plug>RailsTabFind
+nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
+nmap <buffer> gf <Plug>RailsFind
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal balloonexpr=RubyBalloonexpr()
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=:#
+setlocal commentstring=#\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=syntaxcomplete#Complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=^\\s*def\\s\\+\\(self\\.\\)\\=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'ruby'
+setlocal filetype=ruby
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=^\\s*\\<\\(load\\|w*require\\)\\>
+setlocal includeexpr=RailsIncludeexpr()
+setlocal indentexpr=GetRubyIndent()
+setlocal indentkeys=0{,0},0),0],!^F,o,O,e,=end,=elsif,=when,=ensure,=rescue,==begin,==end
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,$
+setlocal keywordprg=ri\ -T
+setlocal nolinebreak
+setlocal nolisp
+set list
+setlocal list
+setlocal nomacmeta
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=rubycomplete#Complete
+setlocal path=.,~/Sites/bootycon/registration,~/Sites/bootycon/registration/app,~/Sites/bootycon/registration/app/models,~/Sites/bootycon/registration/app/controllers,~/Sites/bootycon/registration/app/helpers,~/Sites/bootycon/registration/config,~/Sites/bootycon/registration/lib,~/Sites/bootycon/registration/app/views,~/Sites/bootycon/registration/app/views/application,~/Sites/bootycon/registration/public,~/Sites/bootycon/registration/test,~/Sites/bootycon/registration/test/unit,~/Sites/bootycon/registration/test/functional,~/Sites/bootycon/registration/test/integration,~/Sites/bootycon/registration/app/*,~/Sites/bootycon/registration/vendor,~/Sites/bootycon/registration/vendor/plugins/*/lib,~/Sites/bootycon/registration/vendor/plugins/*/test,~/Sites/bootycon/registration/vendor/rails/*/lib,~/Sites/bootycon/registration/vendor/rails/*/test,/Library/Ruby/Site/1.8,/Library/Ruby/Site/1.8/powerpc-darwin11.0,/Library/Ruby/Site/1.8/universal-darwin11.0,/Library/Ruby/Site,/System/Library/Frameworks/Ruby.framework/Versions/1.8/us
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.rb,.rhtml,.erb,.rxml,.builder,.rjs,.mab,.liquid,.haml,.dryml,.mn,.slim
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'ruby'
+setlocal syntax=ruby
+endif
+setlocal tabstop=2
+setlocal tags=~/Sites/bootycon/registration/tmp/tags,~/Sites/bootycon/.git/ruby.tags,~/Sites/bootycon/.git/tags,./tags,tags,~/Sites/bootycon/registration/tags
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 11 - ((10 * winheight(0) + 36) / 73)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+11
+normal! 0
+tabedit app/controllers/attendees_controller.rb
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer> f <Plug>RailsSplitFind
+nmap <buffer> gf <Plug>RailsTabFind
+nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
+nmap <buffer> gf <Plug>RailsFind
+nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal balloonexpr=RubyBalloonexpr()
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=:#
+setlocal commentstring=#\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=syntaxcomplete#Complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=^\\s*def\\s\\+\\(self\\.\\)\\=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'ruby'
+setlocal filetype=ruby
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=^\\s*\\<\\(load\\|w*require\\)\\>
+setlocal includeexpr=RailsIncludeexpr()
+setlocal indentexpr=GetRubyIndent()
+setlocal indentkeys=0{,0},0),0],!^F,o,O,e,=end,=elsif,=when,=ensure,=rescue,==begin,==end
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,$
+setlocal keywordprg=ri\ -T
+setlocal nolinebreak
+setlocal nolisp
+set list
+setlocal list
+setlocal nomacmeta
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=rubycomplete#Complete
+setlocal path=.,~/Sites/bootycon/registration,~/Sites/bootycon/registration/app,~/Sites/bootycon/registration/app/models,~/Sites/bootycon/registration/app/controllers,~/Sites/bootycon/registration/app/helpers,~/Sites/bootycon/registration/config,~/Sites/bootycon/registration/lib,~/Sites/bootycon/registration/app/views,~/Sites/bootycon/registration/app/views/attendees,~/Sites/bootycon/registration/public,~/Sites/bootycon/registration/test,~/Sites/bootycon/registration/test/unit,~/Sites/bootycon/registration/test/functional,~/Sites/bootycon/registration/test/integration,~/Sites/bootycon/registration/app/*,~/Sites/bootycon/registration/vendor,~/Sites/bootycon/registration/vendor/plugins/*/lib,~/Sites/bootycon/registration/vendor/plugins/*/test,~/Sites/bootycon/registration/vendor/rails/*/lib,~/Sites/bootycon/registration/vendor/rails/*/test,~/Sites/bootycon/registration,~/Sites/bootycon/registration/app,~/Sites/bootycon/registration/app/models,~/Sites/bootycon/registration/app/controllers,~/Sites/bootycon/registration/app/he
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.rb,.rhtml,.erb,.rxml,.builder,.rjs,.mab,.liquid,.haml,.dryml,.mn,.slim
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'ruby'
+setlocal syntax=ruby
+endif
+setlocal tabstop=2
+setlocal tags=~/Sites/bootycon/registration/tmp/tags,~/Sites/bootycon/.git/ruby.tags,~/Sites/bootycon/.git/tags,./tags,tags,~/Sites/bootycon/registration/tags
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 39 - ((38 * winheight(0) + 36) / 73)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+39
+normal! 030l
+tabedit app/controllers/register_controller.rb
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer> gf <Plug>RailsTabFind
+nmap <buffer> f <Plug>RailsSplitFind
+nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
+nmap <buffer> gf <Plug>RailsFind
+nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal balloonexpr=RubyBalloonexpr()
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=:#
+setlocal commentstring=#\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=syntaxcomplete#Complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=^\\s*def\\s\\+\\(self\\.\\)\\=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'ruby'
+setlocal filetype=ruby
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=^\\s*\\<\\(load\\|w*require\\)\\>
+setlocal includeexpr=RailsIncludeexpr()
+setlocal indentexpr=GetRubyIndent()
+setlocal indentkeys=0{,0},0),0],!^F,o,O,e,=end,=elsif,=when,=ensure,=rescue,==begin,==end
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,$
+setlocal keywordprg=ri\ -T
+setlocal nolinebreak
+setlocal nolisp
+set list
+setlocal list
+setlocal nomacmeta
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=rubycomplete#Complete
+setlocal path=.,~/Sites/bootycon/registration,~/Sites/bootycon/registration/app,~/Sites/bootycon/registration/app/models,~/Sites/bootycon/registration/app/controllers,~/Sites/bootycon/registration/app/helpers,~/Sites/bootycon/registration/config,~/Sites/bootycon/registration/lib,~/Sites/bootycon/registration/app/views,~/Sites/bootycon/registration/app/views/register,~/Sites/bootycon/registration/public,~/Sites/bootycon/registration/test,~/Sites/bootycon/registration/test/unit,~/Sites/bootycon/registration/test/functional,~/Sites/bootycon/registration/test/integration,~/Sites/bootycon/registration/app/*,~/Sites/bootycon/registration/vendor,~/Sites/bootycon/registration/vendor/plugins/*/lib,~/Sites/bootycon/registration/vendor/plugins/*/test,~/Sites/bootycon/registration/vendor/rails/*/lib,~/Sites/bootycon/registration/vendor/rails/*/test,Failed\\\ to\\\ load\\\ ~/.gemrc\
+/Library/Ruby/Site/1.8,/Library/Ruby/Site/1.8/powerpc-darwin11.0,/Library/Ruby/Site/1.8/universal-darwin11.0,/Library/Ruby/Site,/System/Library/Frameworks/Ruby.f
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.rb,.rhtml,.erb,.rxml,.builder,.rjs,.mab,.liquid,.haml,.dryml,.mn,.slim
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'ruby'
+setlocal syntax=ruby
+endif
+setlocal tabstop=2
+setlocal tags=~/Sites/bootycon/registration/tmp/tags,~/Sites/bootycon/.git/ruby.tags,~/Sites/bootycon/.git/tags,./tags,tags,~/Sites/bootycon/registration/tags
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 17 - ((16 * winheight(0) + 36) / 73)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+17
+normal! 025l
+tabedit config/routes.rb
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer> f <Plug>RailsSplitFind
+nmap <buffer> gf <Plug>RailsTabFind
+nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
+nmap <buffer> gf <Plug>RailsFind
+nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal balloonexpr=RubyBalloonexpr()
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=:#
+setlocal commentstring=#\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=syntaxcomplete#Complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=^\\s*def\\s\\+\\(self\\.\\)\\=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'ruby'
+setlocal filetype=ruby
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=^\\s*\\<\\(load\\|w*require\\)\\>
+setlocal includeexpr=RailsIncludeexpr()
+setlocal indentexpr=GetRubyIndent()
+setlocal indentkeys=0{,0},0),0],!^F,o,O,e,=end,=elsif,=when,=ensure,=rescue,==begin,==end
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,$
+setlocal keywordprg=ri\ -T
+setlocal nolinebreak
+setlocal nolisp
+set list
+setlocal list
+setlocal nomacmeta
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=rubycomplete#Complete
+setlocal path=.,~/Sites/bootycon/registration,~/Sites/bootycon/registration/app,~/Sites/bootycon/registration/app/models,~/Sites/bootycon/registration/app/controllers,~/Sites/bootycon/registration/app/helpers,~/Sites/bootycon/registration/config,~/Sites/bootycon/registration/lib,~/Sites/bootycon/registration/app/views,~/Sites/bootycon/registration/test,~/Sites/bootycon/registration/test/unit,~/Sites/bootycon/registration/test/functional,~/Sites/bootycon/registration/test/integration,~/Sites/bootycon/registration/app/*,~/Sites/bootycon/registration/vendor,~/Sites/bootycon/registration/vendor/plugins/*/lib,~/Sites/bootycon/registration/vendor/plugins/*/test,~/Sites/bootycon/registration/vendor/rails/*/lib,~/Sites/bootycon/registration/vendor/rails/*/test,/Library/Ruby/Site/1.8,/Library/Ruby/Site/1.8/powerpc-darwin11.0,/Library/Ruby/Site/1.8/universal-darwin11.0,/Library/Ruby/Site,/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/vendor_ruby/1.8,/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.rb,.rhtml,.erb,.rxml,.builder,.rjs,.mab,.liquid,.haml,.dryml,.mn,.slim
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'ruby'
+setlocal syntax=ruby
+endif
+setlocal tabstop=2
+setlocal tags=~/Sites/bootycon/registration/tmp/tags,~/Sites/bootycon/.git/ruby.tags,~/Sites/bootycon/.git/tags,./tags,tags,~/Sites/bootycon/registration/tags
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 35 - ((34 * winheight(0) + 36) / 73)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+35
+normal! 020l
+tabedit app/views/register/show.html.erb
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer> gf <Plug>RailsTabFind
+nmap <buffer> f <Plug>RailsSplitFind
+nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
+nmap <buffer> gf <Plug>RailsFind
+nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal balloonexpr=RubyBalloonexpr()
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=:#
+setlocal commentstring=<%#%s%>
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=syntaxcomplete#Complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'eruby'
+setlocal filetype=eruby
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=^\\s*\\<\\(load\\|w*require\\)\\>
+setlocal includeexpr=RailsIncludeexpr()
+setlocal indentexpr=GetErubyIndent()
+setlocal indentkeys=o,O,*<Return>,<>>,{,},0),0],o,O,!^F,=end,=else,=elsif,=rescue,=ensure,=when
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,$
+setlocal keywordprg=ri\ -T
+setlocal nolinebreak
+setlocal nolisp
+set list
+setlocal list
+setlocal nomacmeta
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=rubycomplete#Complete
+setlocal path=.,~/Sites/bootycon/registration,~/Sites/bootycon/registration/app,~/Sites/bootycon/registration/app/models,~/Sites/bootycon/registration/app/controllers,~/Sites/bootycon/registration/app/helpers,~/Sites/bootycon/registration/config,~/Sites/bootycon/registration/lib,~/Sites/bootycon/registration/app/views,~/Sites/bootycon/registration/app/views/register,~/Sites/bootycon/registration/public,~/Sites/bootycon/registration/test,~/Sites/bootycon/registration/test/unit,~/Sites/bootycon/registration/test/functional,~/Sites/bootycon/registration/test/integration,~/Sites/bootycon/registration/app/*,~/Sites/bootycon/registration/vendor,~/Sites/bootycon/registration/vendor/plugins/*/lib,~/Sites/bootycon/registration/vendor/plugins/*/test,~/Sites/bootycon/registration/vendor/rails/*/lib,~/Sites/bootycon/registration/vendor/rails/*/test,Failed\\\ to\\\ load\\\ ~/.gemrc\
+/Library/Ruby/Site/1.8,/Library/Ruby/Site/1.8/powerpc-darwin11.0,/Library/Ruby/Site/1.8/universal-darwin11.0,/Library/Ruby/Site,/System/Library/Frameworks/Ruby.f
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.rb,.rhtml,.erb,.rxml,.builder,.rjs,.mab,.liquid,.haml,.dryml,.mn,.slim
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'eruby'
+setlocal syntax=eruby
+endif
+setlocal tabstop=2
+setlocal tags=~/Sites/bootycon/registration/tmp/tags,~/Sites/bootycon/.git/eruby.tags,~/Sites/bootycon/.git/tags,./tags,tags,~/Sites/bootycon/registration/tags
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 58 - ((57 * winheight(0) + 36) / 73)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+58
+normal! 038l
+tabnext 5
+if exists('s:wipebuf')
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToO
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

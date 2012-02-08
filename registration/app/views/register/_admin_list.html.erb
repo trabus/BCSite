@@ -1,0 +1,11 @@
+<ul>
+<% @attendees.each do |attendee| %>
+  <li>
+    <p><%= attendee.username %>
+      <%= link_to 'Show', attendee %> 
+      <%= link_to 'Edit', edit_attendee_path(attendee) %> 
+      <%= link_to 'Destroy', attendee, :confirm => 'Are you sure?', :method => :delete %>
+    <p>
+  </li>
+<% end %>
+</ul>

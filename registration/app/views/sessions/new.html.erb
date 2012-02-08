@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+<h1>Login</h1>
+<div class="content">
+  <p>
+  <%= form_tag sessions_path do %>
+    Password: <%= password_field_tag :password %>
+    <%= submit_tag "Login" %>
+  <% end %>
+  </p>
+</div>
